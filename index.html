@@ -8,9 +8,6 @@
     <link href="./public/styles/css/index.css" rel="stylesheet">
 </head>
 <body style="background: white;">
-    <div class="appHeader">
-        <h1>Service Testing Suite</h1>
-    </div>
     <div class="container mainContent">
         <h2>Select which services to find:</h2>
         <form>
@@ -28,6 +25,22 @@
                     <input id="impressionsCheckbox" class="form-check-input" type="checkbox"><label for="impressionsCheckbox">Impressions</label>
                 </li>
             </ul>
+            <div class="test-amount">
+                <label for="serviceAmount">Number of services to test:</label>
+                <input id="serviceAmount" value=0>
+            </div>
+            <div class="budget-wrapper">
+                <div class="budget-input-wrapper">
+                    <div class="min-price">
+                        <label for="minPrice">Min price:</label>
+                        <input id="minPrice" value="0.00">
+                    </div>
+                    <div class="max-price">
+                        <label for="maxPrice">Max price:</label>
+                        <input id="maxPrice" value="0.00">
+                    </div>
+                </div>
+            </div>
             <div class="button-wrapper">
                 <button class="btn btn-primary" type="submit">Find Services</button>
             </div>

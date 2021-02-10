@@ -1,65 +1,42 @@
 const axios = require('axios');
-const apiCalls = require('../http/apiCalls.js');
 
 function ServicesController(){
+    // Place an order for 100 for each service except for saves. 50 saves.
+    //
+    //
 
-    async function getAsgardianActiveLikes(){
-        try {
-            let asgardianActiveLikes = await apiCalls.fetchAsgardianActiveLikes();
-            return asgardianActiveLikes.data;
-        }catch(error){
-            return [
-                {
-                    "error": true,
-                    "errorMessage": error.message
-                }
-            ];
+    const suppliers = [
+        {
+            supplier: "Jap",
+            url: 'https://justanotherpanel.com/api/v2'
+        },
+        {
+            supplier: "SmmLite",
+            url: 'http://smmlite.com/api/v2'
+        },
+        {
+            supplier: "Followiz",
+            url: 'https://followiz.com/api/v2'
+        },
+        {
+            supplier: "InstantPanel",
+            url: 'https://instantpanel.net/api/v2'
+        },
+        {
+            supplier: "RealSite/Smo",
+            url: 'https://realsite.shop/api/v2'
         }
+    ]
+
+    function selectRandomSupplier(){
+        return suppliers[Math.floor(Math.random() * suppliers.length)];
     }
 
-    async function getAsgardianActiveViews(){
-        try {
-            let asgardianActiveViews = await apiCalls.fetchAsgardianActiveViews();
-            return asgardianActiveViews.data;
-        }catch(error){
-            return [
-                {
-                    "error": true,
-                    "errorMessage": error.message
-                }
-            ];
-        }
+    function getSupplierServices(){
+
     }
 
-    async function getAsgardianActiveSaves(){
-        try {
-            let asgardianActiveSaves = await apiCalls.fetchAsgardianActiveSaves();
-            return asgardianActiveSaves.data;
-        }catch(error){
-            return [
-                {
-                    "error": true,
-                    "errorMessage": error.message
-                }
-            ];
-        }
-    }
-    
-    async function getAsgardianActiveImpressions(){
-        try {
-            let asgardianActiveImpressions = await apiCalls.fetchAsgardianActiveImpressions();
-            return asgardianActiveImpressions.data;
-        }catch(error){
-            return [
-                {
-                    "error": true,
-                    "errorMessage": error.message
-                }
-            ];
-        }
-    }
-
-    return { getAsgardianActiveLikes, getAsgardianActiveViews, getAsgardianActiveSaves, getAsgardianActiveImpressions };
+    return { selectRandomSupplier };
 }
 
 module.exports = ServicesController();

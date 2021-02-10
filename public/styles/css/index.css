@@ -2,10 +2,6 @@ html, body {
   height: 100%;
 }
 
-.appHeader h1 {
-  text-align: center;
-}
-
 .mainContent {
   display: flex;
   flex-direction: column;
@@ -19,12 +15,39 @@ html, body {
 .mainContent form ul {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  list-style: none;
+}
+.mainContent form ul li {
+  padding: 0 30px;
 }
 .mainContent form .button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.mainContent form .test-amount {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px;
+}
+.mainContent form .budget-wrapper {
+  margin: 15px;
+}
+.mainContent form .budget-wrapper .budget-input-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.mainContent form .budget-wrapper .budget-input-wrapper > div {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.mainContent form .button-wrapper {
+  margin: 15px;
 }
 
 /*# sourceMappingURL=index.css.map */
